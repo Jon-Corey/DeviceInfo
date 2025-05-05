@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+        <link rel="stylesheet" href="/css/site.css">
+        <script src="https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js"></script>
+        <link rel="icon" type="image/png" href="/images/icon.png">
+        <link href="manifest.webmanifest" rel="manifest" />
+
+        <title>Device Info</title>
+
+        <!-- Apple Images -->
+        <link rel="apple-touch-icon" href="images/generated/app-icon-512.png" />
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_16_Pro_Max_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_16_Pro_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_16_Plus__iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_16__iPhone_15_Pro__iPhone_15__iPhone_14_Pro_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_16e__iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_11_Pro_Max__iPhone_XS_Max_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/iPhone_11__iPhone_XR_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: landscape)" href="images/generated/iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/4__iPhone_SE__iPod_touch_5th_generation_and_later_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 1032px) and (device-height: 1376px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/13__iPad_Pro_M4_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/12.9__iPad_Pro_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1210px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/11__iPad_Pro_M4_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/11__iPad_Pro__10.5__iPad_Pro_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/10.9__iPad_Air_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/10.5__iPad_Air_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/10.2__iPad_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)" href="images/generated/8.3__iPad_Mini_landscape.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_16_Pro_Max_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_16_Pro_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_16_Plus__iPhone_15_Pro_Max__iPhone_15_Plus__iPhone_14_Pro_Max_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_16__iPhone_15_Pro__iPhone_15__iPhone_14_Pro_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_14_Plus__iPhone_13_Pro_Max__iPhone_12_Pro_Max_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_16e__iPhone_14__iPhone_13_Pro__iPhone_13__iPhone_12_Pro__iPhone_12_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_13_mini__iPhone_12_mini__iPhone_11_Pro__iPhone_XS__iPhone_X_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_11_Pro_Max__iPhone_XS_Max_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/iPhone_11__iPhone_XR_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)" href="images/generated/iPhone_8_Plus__iPhone_7_Plus__iPhone_6s_Plus__iPhone_6_Plus_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/iPhone_8__iPhone_7__iPhone_6s__iPhone_6__4.7__iPhone_SE_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/4__iPhone_SE__iPod_touch_5th_generation_and_later_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 1032px) and (device-height: 1376px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/13__iPad_Pro_M4_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/12.9__iPad_Pro_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1210px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/11__iPad_Pro_M4_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/11__iPad_Pro__10.5__iPad_Pro_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 820px) and (device-height: 1180px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/10.9__iPad_Air_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 834px) and (device-height: 1112px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/10.5__iPad_Air_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 810px) and (device-height: 1080px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/10.2__iPad_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/9.7__iPad_Pro__7.9__iPad_mini__9.7__iPad_Air__9.7__iPad_portrait.png">
+        <link rel="apple-touch-startup-image" media="screen and (device-width: 744px) and (device-height: 1133px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)" href="images/generated/8.3__iPad_Mini_portrait.png">
+    </head>
+    <body>
+        <header>
+            <img src="/images/icon.svg" alt="" class="logo">
+            <h1>Device Info</h1>
+            <a href="https://joncorey.dev" target="_blank" rel="noopener noreferrer" class="header-link">
+                <!-- Icon Source: https://icons.getbootstrap.com/ -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16">
+                    <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m7.5-6.923c-.67.204-1.335.82-1.887 1.855A8 8 0 0 0 5.145 4H7.5zM4.09 4a9.3 9.3 0 0 1 .64-1.539 7 7 0 0 1 .597-.933A7.03 7.03 0 0 0 2.255 4zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a7 7 0 0 0-.656 2.5zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5zM8.5 5v2.5h2.99a12.5 12.5 0 0 0-.337-2.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5zM5.145 12q.208.58.468 1.068c.552 1.035 1.218 1.65 1.887 1.855V12zm.182 2.472a7 7 0 0 1-.597-.933A9.3 9.3 0 0 1 4.09 12H2.255a7 7 0 0 0 3.072 2.472M3.82 11a13.7 13.7 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5zm6.853 3.472A7 7 0 0 0 13.745 12H11.91a9.3 9.3 0 0 1-.64 1.539 7 7 0 0 1-.597.933M8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855q.26-.487.468-1.068zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.7 13.7 0 0 1-.312 2.5m2.802-3.5a7 7 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7 7 0 0 0-3.072-2.472c.218.284.418.598.597.933M10.855 4a8 8 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4z"/>
+                </svg>
+                <span class="visually-hidden">Jon Corey's Website</span>
+            </a>
+            <a href="https://github.com/Jon-Corey/DeviceInfo" target="_blank" rel="noopener noreferrer" class="header-link">
+                <!-- Icon Source: https://icons.getbootstrap.com/ -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                    <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+                </svg>
+                <span class="visually-hidden">GitHub Repository</span>
+            </a>
+        </header>
+
+        <hr>
+
+        <main>
+            <section>
+                <h1>IP Address</h1>
+                <div class="items">
+                    <div class="item">
+                        <p class="label">IP Address:</p>
+                        <p class="value" id="ip-address">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Country:</p>
+                        <p class="value" id="ip-country">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Region (State, Province, etc.):</p>
+                        <p class="value" id="ip-region">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">City:</p>
+                        <p class="value" id="ip-city">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Zip:</p>
+                        <p class="value" id="ip-zip">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Latitude:</p>
+                        <p class="value" id="ip-latitute">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Longitude:</p>
+                        <p class="value" id="ip-longitude">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Time Zone:</p>
+                        <p class="value" id="ip-time-zone">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Time Zone Offset:</p>
+                        <p class="value" id="ip-time-zone-offset">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">ISP:</p>
+                        <p class="value" id="ip-isp">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Organization:</p>
+                        <p class="value" id="ip-organization">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">AS Identifier:</p>
+                        <p class="value" id="ip-as-identifier">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Is a Mobile Network:</p>
+                        <p class="value" id="ip-mobile-network">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Is a Proxy/VPN:</p>
+                        <p class="value" id="ip-proxy">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>User Agent</h1>
+                <div class="items">
+                    <div class="item">
+                        <p class="label">Browser:</p>
+                        <p class="value" id="ua-browser">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Browser Version:</p>
+                        <p class="value" id="ua-browser-version">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Engine:</p>
+                        <p class="value" id="ua-engine">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Engine Version:</p>
+                        <p class="value" id="ua-engine-version">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">OS:</p>
+                        <p class="value" id="ua-os">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">OS Version:</p>
+                        <p class="value" id="ua-os-version">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Device Type:</p>
+                        <p class="value" id="ua-device-type">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Device Model:</p>
+                        <p class="value" id="ua-device-model">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Device Vendor:</p>
+                        <p class="value" id="ua-device-vendor">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">CPU Type:</p>
+                        <p class="value" id="ua-cpu-type">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Window</h1>
+                <div class="items">
+                    <div class="item">
+                        <p class="label">Inner Width:</p>
+                        <p class="value" id="window-inner-width">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Inner Height:</p>
+                        <p class="value" id="window-inner-height">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Outer Width:</p>
+                        <p class="value" id="window-outer-width">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Outer Height:</p>
+                        <p class="value" id="window-outer-height">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">X Position:</p>
+                        <p class="value" id="window-x-position">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Y Position:</p>
+                        <p class="value" id="window-y-position">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Screen</h1>
+                <div class="items">
+                    <div class="item">
+                        <p class="label">Width:</p>
+                        <p class="value" id="screen-width">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Height:</p>
+                        <p class="value" id="screen-height">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Available Width:</p>
+                        <p class="value" id="screen-available-width">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Available Height:</p>
+                        <p class="value" id="screen-available-height">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Orientation:</p>
+                        <p class="value" id="screen-orientation">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Orientation Angle:</p>
+                        <p class="value" id="screen-orientation-angle">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Pixel Ratio:</p>
+                        <p class="value" id="screen-pixel-ratio">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Device Time</h1>
+                <div class="items">
+                    <div class="item">
+                        <p class="label">Current Time:</p>
+                        <p class="value" id="time-current">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Time Zone Offset:</p>
+                        <p class="value" id="time-zone-offset">Loading...</p>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h1>Media Features</h1>
+                <div class="items">
+                    <div class="item">
+                        <p class="label">Preferred Color Scheme:</p>
+                        <p class="value" id="preferences-color-scheme">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Preferred Contrast:</p>
+                        <p class="value" id="preferences-contrast">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Prefers Reduced Motion:</p>
+                        <p class="value" id="preferences-reduced-motion">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">Primary Pointer Accuracy:</p>
+                        <p class="value" id="preferences-primary-pointer">Loading...</p>
+                    </div>
+                    <div class="item">
+                        <p class="label">All Pointers Accuracy:</p>
+                        <p class="value" id="preferences-all-pointers">Loading...</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <hr>
+
+        <footer>
+            &copy; JonCorey.Dev <span id="current-year">2025</span>
+        </footer>
+
+        <script src="/js/app.js"></script>
+        <script>
+            navigator.serviceWorker.register('service-worker.js');
+        </script>
+    </body>
+</html>

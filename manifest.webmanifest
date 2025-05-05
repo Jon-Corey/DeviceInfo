@@ -1,0 +1,41 @@
+{
+    "name": "Device Info",
+    "short_name": "Device Info",
+    "description": "An app showing what info websites can access about your device.",
+    "id": "./",
+    "start_url": "./",
+    "display": "standalone",
+    "orientation": "any",
+    "background_color": "#121212",
+    "theme_color": "#ff355d",
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "./images/generated/app-icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./images/generated/app-icon-192-maskable.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "./images/generated/app-icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "./images/generated/app-icon-512-maskable.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "launch_handler": {
+        "client_mode": "focus-existing"
+    }
+}
