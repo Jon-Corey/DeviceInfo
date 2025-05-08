@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
         <link rel="stylesheet" href="/css/site.css">
-        <script src="https://cdn.jsdelivr.net/npm/ua-parser-js/dist/ua-parser.min.js"></script>
         <link rel="icon" type="image/png" href="/images/icon.png">
 
         <link href="manifest.webmanifest" rel="manifest" />
@@ -82,9 +81,13 @@
         <hr>
 
         <main>
-            <section>
+            <section id="ip-address-section">
                 <h1>IP Address</h1>
-                <div class="items">
+                <div class="items online">
+                    <div class="item">
+                        <p class="label">Network Status:</p>
+                        <p class="value" id="ip-network-status">Loading...</p>
+                    </div>
                     <div class="item">
                         <p class="label">IP Address:</p>
                         <p class="value" id="ip-address">Loading...</p>
@@ -141,9 +144,19 @@
                         <p class="label">Is a Proxy/VPN:</p>
                         <p class="value" id="ip-proxy">Loading...</p>
                     </div>
+                    <div class="item">
+                        <p class="label">Is a Data Center:</p>
+                        <p class="value" id="ip-data-center">Loading...</p>
+                    </div>
+                </div>
+                <div class="items offline" style="display: none;">
+                    <div class="item">
+                        <p class="label">Network Status:</p>
+                        <p class="value" id="ip-network-status-offline">Offline</p>
+                    </div>
                 </div>
             </section>
-            <section>
+            <section id="user-agent-section">
                 <h1>User Agent</h1>
                 <div class="items">
                     <div class="item">
@@ -188,7 +201,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="window-section">
                 <h1>Window</h1>
                 <div class="items">
                     <div class="item">
@@ -217,7 +230,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="screen-section">
                 <h1>Screen</h1>
                 <div class="items">
                     <div class="item">
@@ -250,7 +263,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="device-time-section">
                 <h1>Device Time</h1>
                 <div class="items">
                     <div class="item">
@@ -263,7 +276,7 @@
                     </div>
                 </div>
             </section>
-            <section>
+            <section id="media-features-section">
                 <h1>Media Features</h1>
                 <div class="items">
                     <div class="item">
@@ -296,6 +309,7 @@
             &copy; JonCorey.Dev <span id="current-year">2025</span>
         </footer>
 
+        <script src="/js/ua-parser.min.js"></script>
         <script src="/js/app.js"></script>
         <script>
             navigator.serviceWorker.register('service-worker.js');

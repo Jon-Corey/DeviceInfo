@@ -1,3 +1,24 @@
+function checkNetworkStatus() {
+    const ipNetworkStatusOutput = document.getElementById("ip-network-status");
+
+    if (navigator.onLine == false) {
+        ipNetworkStatusOutput.innerText = "Offline";
+
+        const onlineElements = document.getElementsByClassName("online");
+        const offlineElements = document.getElementsByClassName("offline");
+
+        for (let i = 0; i < onlineElements.length; i++) {
+            onlineElements[i].style.display = "none";
+        }
+        for (let i = 0; i < offlineElements.length; i++) {
+            offlineElements[i].style.display = "";
+        }
+    }
+    else {
+        ipNetworkStatusOutput.innerText = "Online";
+    }
+}
+
 async function getIpAddressInfo() {
     const ipAddressOutput = document.getElementById("ip-address");
     const countryOutput = document.getElementById("ip-country");
@@ -13,49 +34,54 @@ async function getIpAddressInfo() {
     const asIdentifierOutput = document.getElementById("ip-as-identifier");
     const mobileNetworkOutput = document.getElementById("ip-mobile-network");
     const proxyOutput = document.getElementById("ip-proxy");
+    const dataCenterOutput = document.getElementById("ip-data-center");
 
-    const result = await fetch("http://ip-api.com/json?fields=33615871");
+    if (navigator.onLine) {
+        const result = await fetch("https://ipproxy.azurewebsites.net/api/IpProxy");
 
-    if (!result.ok) {
-        console.error(`IP request response failed with status: ${ipResult.status}`);
-        return;
+        if (!result.ok) {
+            console.error(`IP request response failed with status: ${ipResult.status}`);
+            return;
+        }
+        
+        const json = await result.json();
+
+        if (json.status != "success") {
+            console.error(`IP request response failed with message: ${json.message}`);
+            ipAddressOutput.innerText = json.query;
+            countryOutput.innerText = "[Error]";
+            regionOutput.innerText = "[Error]";
+            cityOutput.innerText = "[Error]";
+            zipOutput.innerText = "[Error]";
+            latituteOutput.innerText = "[Error]";
+            longitudeOutput.innerText = "[Error]";
+            timeZoneOutput.innerText = "[Error]";
+            timeZoneOffsetOutput.innerText = "[Error]";
+            ispOutput.innerText = "[Error]";
+            organizationOutput.innerText = "[Error]";
+            asIdentifierOutput.innerText = "[Error]";
+            mobileNetworkOutput.innerText = "[Error]";
+            proxyOutput.innerText = "[Error]";
+            dataCenterOutput.innerText = "[Error]";
+            return;
+        }
+
+        ipAddressOutput.innerText = json.query ?? "\xa0";
+        countryOutput.innerText = json.country ?? "\xa0";
+        regionOutput.innerText = json.regionName ?? "\xa0";
+        cityOutput.innerText = json.city ?? "\xa0";
+        zipOutput.innerText = json.zip ?? "\xa0";
+        latituteOutput.innerText = json.lat ?? "\xa0";
+        longitudeOutput.innerText = json.lon ?? "\xa0";
+        timeZoneOutput.innerText = json.timezone ?? "\xa0";
+        timeZoneOffsetOutput.innerText = json.offset != null ? `${json.offset > 0 ? "+" : ""}${json.offset/3600} hours` : "\xa0";
+        ispOutput.innerText = json.isp ?? "\xa0";
+        organizationOutput.innerText = json.org ?? "\xa0";
+        asIdentifierOutput.innerText = json.as ?? "\xa0";
+        mobileNetworkOutput.innerText = json.mobile == null ? "\xa0" : json.mobile == true ? "Yes" : "No";
+        proxyOutput.innerText = json.proxy == null ? "\xa0" : json.proxy == true ? "Yes" : "No";
+        dataCenterOutput.innerText = json.hosting == null ? "\xa0" : json.hosting == true ? "Yes" : "No";
     }
-    
-    const json = await result.json();
-
-    if (json.status != "success") {
-        console.error(`IP request response failed with message: ${json.message}`);
-        ipAddressOutput.innerText = json.query;
-        countryOutput.innerText = "[Error]";
-        regionOutput.innerText = "[Error]";
-        cityOutput.innerText = "[Error]";
-        zipOutput.innerText = "[Error]";
-        latituteOutput.innerText = "[Error]";
-        longitudeOutput.innerText = "[Error]";
-        timeZoneOutput.innerText = "[Error]";
-        timeZoneOffsetOutput.innerText = "[Error]";
-        ispOutput.innerText = "[Error]";
-        organizationOutput.innerText = "[Error]";
-        asIdentifierOutput.innerText = "[Error]";
-        mobileNetworkOutput.innerText = "[Error]";
-        proxyOutput.innerText = "[Error]";
-        return;
-    }
-
-    ipAddressOutput.innerText = json.query;
-    countryOutput.innerText = json.country;
-    regionOutput.innerText = json.regionName;
-    cityOutput.innerText = json.city;
-    zipOutput.innerText = json.zip;
-    latituteOutput.innerText = json.lat;
-    longitudeOutput.innerText = json.lon;
-    timeZoneOutput.innerText = json.timezone;
-    timeZoneOffsetOutput.innerText = `${json.offset > 0 ? "+" : ""}${json.offset/3600} hours`;
-    ispOutput.innerText = json.isp;
-    organizationOutput.innerText = json.org;
-    asIdentifierOutput.innerText = json.as;
-    mobileNetworkOutput.innerText = json.mobile == true ? "Yes" : "No";
-    proxyOutput.innerText = json.proxy == true ? "Yes" : "No";
 }
 
 function getUserAgentInfo() {
@@ -200,6 +226,7 @@ function getMediaFeatureInfo() {
 }
 
 // Get all of the info
+checkNetworkStatus();
 getIpAddressInfo();
 getUserAgentInfo();
 updateWindowInfo();

@@ -4,7 +4,7 @@ $fileList = Get-ChildItem -Recurse -File -Exclude "list-assets.ps1", ".gitignore
     $_.FullName.Replace((Get-Location).Path, "").Replace("\", "/").TrimStart("/")
 }
 
-$jsContent = "self.assetsManifest = {""version"":""1.0.0"",""assets"":" + ($fileList | ConvertTo-Json -Compress) + "};"
+$jsContent = "self.assetsManifest = {""version"":""1.1.0"",""assets"":" + ($fileList | ConvertTo-Json -Compress) + "};"
 
 $jsContent | Set-Content $outputFile
 
